@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my page</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-        header { background: #4CAF50; color: white; padding: 10px 0; }
-        main { padding: 20px; }
-    </style>
+    <title>我的照片展示</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>welcome to visit my page</h1>
+        <h1>我的照片展示</h1>
     </header>
     <main>
-        <p></p>
-        <p></p>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/150" alt="照片1">
+            <img src="https://via.placeholder.com/150" alt="照片2">
+            <img src="https://via.placeholder.com/150" alt="照片3">
+            <img src="https://via.placeholder.com/150" alt="照片4">
+            <img src="https://via.placeholder.com/150" alt="照片5">
+        </div>
+        <div class="buttons">
+            <button onclick="previousPhoto()">上一张</button>
+            <button onclick="nextPhoto()">下一张</button>
+        </div>
     </main>
+    <script>
+        // JavaScript函数来处理按钮点击事件
+        let currentPhotoIndex = 0;
+        const photos = document.querySelectorAll('.gallery img');
+
+        function previousPhoto() {
+            photos[currentPhotoIndex].style.borderColor = "#ddd";
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            photos[currentPhotoIndex].style.borderColor = "#4CAF50";
+        }
+
+        function nextPhoto() {
+            photos[currentPhotoIndex].style.borderColor = "#ddd";
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            photos[currentPhotoIndex].style.borderColor = "#4CAF50";
+        }
+    </script>
 </body>
 </html>
