@@ -3,41 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的照片展示</title>
+    <title>关于我</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>我的照片展示</h1>
+        <h1>关于我</h1>
     </header>
+    <nav>
+        <button onclick="showSection('about')">关于我</button>
+        <button onclick="showSection('skills')">技能</button>
+        <button onclick="showSection('projects')">项目</button>
+        <button onclick="showSection('contact')">联系我</button>
+    </nav>
     <main>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/150" alt="照片1">
-            <img src="https://via.placeholder.com/150" alt="照片2">
-            <img src="https://via.placeholder.com/150" alt="照片3">
-            <img src="https://via.placeholder.com/150" alt="照片4">
-            <img src="https://via.placeholder.com/150" alt="照片5">
-        </div>
-        <div class="buttons">
-            <button onclick="previousPhoto()">上一张</button>
-            <button onclick="nextPhoto()">下一张</button>
-        </div>
+        <section id="about" class="content-section">
+            <h2>关于我</h2>
+            <p>你好！我是[你的名字]，一名[你的职业或兴趣]，我喜欢[你的爱好]。我有[你的经验或特长]。</p>
+        </section>
+        <section id="skills" class="content-section" style="display: none;">
+            <h2>技能</h2>
+            <ul>
+                <li>技能 1</li>
+                <li>技能 2</li>
+                <li>技能 3</li>
+                <!-- 添加更多技能 -->
+            </ul>
+        </section>
+        <section id="projects" class="content-section" style="display: none;">
+            <h2>项目</h2>
+            <ul>
+                <li>项目 1：描述项目 1 的内容。</li>
+                <li>项目 2：描述项目 2 的内容。</li>
+                <!-- 添加更多项目 -->
+            </ul>
+        </section>
+        <section id="contact" class="content-section" style="display: none;">
+            <h2>联系我</h2>
+            <p>电子邮件：<a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>电话：123-456-7890</p>
+        </section>
     </main>
     <script>
-        // JavaScript函数来处理按钮点击事件
-        let currentPhotoIndex = 0;
-        const photos = document.querySelectorAll('.gallery img');
-
-        function previousPhoto() {
-            photos[currentPhotoIndex].style.borderColor = "#ddd";
-            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-            photos[currentPhotoIndex].style.borderColor = "#4CAF50";
-        }
-
-        function nextPhoto() {
-            photos[currentPhotoIndex].style.borderColor = "#ddd";
-            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-            photos[currentPhotoIndex].style.borderColor = "#4CAF50";
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
         }
     </script>
 </body>
