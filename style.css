@@ -1,0 +1,74 @@
+body {
+
+font-family: 'Helvetica Neue', Arial, sans-serif;
+
+background-color: #f0f0f0;
+
+color: #333;
+
+}
+
+
+header {
+
+background: #333;
+
+color: white;
+
+padding: 20px 0;
+
+}
+
+
+main {
+
+max-width: 800px;
+
+margin: 20px auto;
+
+padding: 0 20px;
+
+}
+
+
+.about, .projects, .blog {
+
+background: white;
+
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+padding: 30px;
+
+margin-top: 20px;
+
+border-radius: 8px;
+
+}
+
+
+h1, h2, h3 {
+
+font-weight: normal;
+
+color: #4CAF50;
+
+}
+
+
+p {
+
+line-height: 1.6;
+
+}
+
+
+ul {
+
+list-style-type: none;
+
+padding: 0;
+
+}
+
+
+li {
